@@ -23,19 +23,19 @@ public class MobileChromeBrowser_Raghaw {
 		caps.setCapability("deviceName", "2NYDU18427002753");
 		caps.setCapability("platformName", "Android");
 		caps.setCapability(CapabilityType.BROWSER_NAME, "chrome");
-		caps.setCapability(CapabilityType.VERSION, "8.1.0");
+		caps.setCapability(CapabilityType.BROWSER_VERSION, "90.0.4430.82");
 
 		// Instantiate Appium Driver
 		AppiumDriver<MobileElement> driver = null;
 		try {
-			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
 
 		} catch (MalformedURLException e) {
 			System.out.println(e.getMessage());
 		}
 
 		// Open URL in Chrome Browser
-		driver.get("https://www.currys.co.uk");
+		driver.get("https://www.argos.co.uk/");
 	}
 
 }
