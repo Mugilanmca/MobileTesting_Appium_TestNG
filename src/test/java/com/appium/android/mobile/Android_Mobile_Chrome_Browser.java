@@ -3,6 +3,7 @@ package com.appium.android.mobile;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -12,7 +13,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class Android_Mobile_Chrome_Browser {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws InterruptedException 
 	{
 		// Set the Desired Capabilities
 				DesiredCapabilities caps = new DesiredCapabilities();
@@ -33,7 +34,14 @@ public class Android_Mobile_Chrome_Browser {
 				}
 				
 				// Open URL in Chrome Browser
-				driver.get("https://www.w3schools.com/");
+				driver.get("https://www.noon.com/uae-en/");
+				Thread.sleep(5000);
+				driver.findElement(By.xpath("//*[@id='searchBar']")).click();
+				driver.findElement(By.xpath("//*[@id='searchBar']")).sendKeys("TV");
+				driver.findElement(By.xpath("//*[contains(text(),'My Account')]")).click();
+				driver.findElement(By.xpath("//android.widget.Button[contains(text(),'Sign In')]")).click();
+				
+				
 	}
 
 }
